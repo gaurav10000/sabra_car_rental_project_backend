@@ -16,7 +16,11 @@ const authMiddleware = require('./middleware/authMiddleware');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(
+    {
+        allowedHeaders: "*"
+    }
+));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
